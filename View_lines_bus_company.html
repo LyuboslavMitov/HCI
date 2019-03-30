@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles/view_lines.css">
+    <title>Lines</title>
+</head>
+
+<body>
+        <div class="container" >
+        <form class="justify-content-center" id="create-bus-line">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="startPoint">Start point</label>
+                    <select class="form-control" id="startPoint">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="duration">Duration</label>
+                    <input type="text" class="form-control" id="duration">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="endPoint">End point</label>
+                    <select class="form-control" id="endPoint">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" id="price">
+                </div>
+            </div>
+            <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="stops">Intermediate stops</label>
+                        <select class="form-control" id="stops">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="distance">Distance</label>
+                        <input type="text" class="form-control" id="distance" >
+                    </div>
+                </div>
+
+            <button type="submit" class="btn btn-primary">Create Line</button>
+        </form>
+    </div>
+
+    <div class="container">
+            <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Start Point</th>
+                        <th scope="col">End Point</th>
+                        <th scope="col">Stops</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Distance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <!-- <th scope="row">1</th> -->
+                        <td>Sofia</td>
+                        <td>Pazardzhik</td>
+                        <td>-</td>
+                        <td>2 h</td>
+                        <td>8 BGN</td>
+                        <td>120 km</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
