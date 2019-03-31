@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/view_lines.css">
+    <script src="./scripts/lines.js"></script>
     <title>Lines</title>
 </head>
 
@@ -17,11 +18,14 @@
                 <div class="form-group col-sm-6">
                     <label for="startPoint">Start point</label>
                     <select class="form-control" id="startPoint">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>Sofia</option>
+                        <option>St Zagora</option>
+                        <option>Plovdiv</option>
+                        <option>Varna</option>
+                        <option>Vidin</option>
+                        <option>Ruse</option>
+                        <option>Bourgas</option>
+                        <option>Pazardzhik</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6">
@@ -33,11 +37,14 @@
                 <div class="form-group col-sm-6">
                     <label for="endPoint">End point</label>
                     <select class="form-control" id="endPoint">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>Sofia</option>
+                        <option>St Zagora</option>
+                        <option>Plovdiv</option>
+                        <option>Varna</option>
+                        <option>Vidin</option>
+                        <option>Ruse</option>
+                        <option>Bourgas</option>
+                        <option>Pazardzhik</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6">
@@ -49,11 +56,14 @@
                 <div class="form-group col-sm-6">
                     <label for="stops">Intermediate stops</label>
                     <select class="form-control" id="stops">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <option>Sofia</option>
+                        <option>St Zagora</option>
+                        <option>Plovdiv</option>
+                        <option>Varna</option>
+                        <option>Vidin</option>
+                        <option>Ruse</option>
+                        <option>Bourgas</option>
+                        <option>Pazardzhik</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-6">
@@ -62,12 +72,12 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Create Line</button>
+            <button type="submit" class="btn btn-primary" onclick="addLine()">Create Line</button>
         </form>
     </div>
 
     <div class="container">
-        <table class="table table-bordered">
+        <table id="lines" class="table table-fit table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Start Point</th>
@@ -87,7 +97,7 @@
                     <td>2 h</td>
                     <td>8 BGN</td>
                     <td>120 km</td>
-                    <td><button><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                    <td><button>Remove line <i class="fa fa-trash" aria-hidden="true"></i></button></td>
                 </tr>
                 <tr>
                     <td>Vidin</td>
@@ -96,13 +106,13 @@
                     <td>3:30 h</td>
                     <td>18 BGN</td>
                     <td>240 km</td>
-                    <td><button><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-                </tr>
+                    <td><button>Remove line <i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                </tr>   
             </tbody>
         </table>
     </div>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
