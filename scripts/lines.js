@@ -22,8 +22,13 @@ function addLine() {
     }
 
     var removeButton = newRow.insertCell();
-    removeButton.innerHTML = `<button>Remove line <i class="fa fa-trash" aria-hidden="true"></i></button>`;
-    
+    removeButton.innerHTML = `<button id="${allLines.length - 1}" onclick="removeLine(this.id)">Remove line <i class="fa fa-trash" aria-hidden="true"></i></button>`;
+
 
     event.preventDefault();
+}
+function removeLine(position) {
+    console.log(position)
+    allLines.splice(position, 1);
+    document.getElementById('lines').deleteRow(position)
 }
