@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/view_lines.css">
-    <title>Lines</title>
+    <script src="./scripts/lines.js"></script>
+    <title>Search route</title>
 </head>
 
 <body>
@@ -19,10 +20,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="./home.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="./view-lines-bus-company.html">Company lines</a>
-
-                <a class="nav-item nav-link" href="./userinfo.html">Profile</a>
+                <a class="nav-item nav-link active" href="./home.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Search route</a>
+                <a class="nav-item nav-link" href="./my-tickets.html">My
+                    tickets</a>
+                <a class="nav-item nav-link" href="#">Profile</a>
                 <a class="nav-item nav-link" href="#">Logout</a>
             </div>
         </div>
@@ -30,7 +32,7 @@
     <div class="container">
         <form class="justify-content-center" id="create-bus-line">
             <div class="form-row">
-                <div class="form-group col-sm-6">
+                <div class="form-group col-sm-6 col-lg-4">
                     <label for="startPoint">Start point</label>
                     <select class="form-control" id="startPoint">
                         <option>Sofia</option>
@@ -43,13 +45,9 @@
                         <option>Pazardzhik</option>
                     </select>
                 </div>
-                <div class="form-group col-sm-6">
-                    <label for="duration">Duration</label>
-                    <input type="text" class="form-control" id="duration">
-                </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-sm-6">
+                <div class="form-group col-sm-6 col-lg-4">
                     <label for="endPoint">End point</label>
                     <select class="form-control" id="endPoint">
                         <option>Sofia</option>
@@ -62,32 +60,17 @@
                         <option>Pazardzhik</option>
                     </select>
                 </div>
-                <div class="form-group col-sm-6">
-                    <label for="price">Price</label>
-                    <input type="text" class="form-control" id="price">
-                </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-sm-6">
-                    <label for="stops">Intermediate stops</label>
-                    <select class="form-control" id="stops">
-                        <option>Sofia</option>
-                        <option>St Zagora</option>
-                        <option>Plovdiv</option>
-                        <option>Varna</option>
-                        <option>Vidin</option>
-                        <option>Ruse</option>
-                        <option>Bourgas</option>
-                        <option>Pazardzhik</option>
+                <div class="form-group col-sm-6 col-lg-4">
+                    <label for="sort">Sort by</label>
+                    <select class="form-control" id="sort">
+                        <option>Duration</option>
+                        <option>Price</option>
+                        <option>Distance</option>
                     </select>
                 </div>
-                <div class="form-group col-sm-6">
-                    <label for="distance">Distance</label>
-                    <input type="text" class="form-control" id="distance">
-                </div>
             </div>
-
-            <button type="submit" class="btn btn-primary" onclick="addLine()">Create Line</button>
         </form>
     </div>
 
@@ -101,6 +84,7 @@
                     <th scope="col">Duration</th>
                     <th scope="col">Price</th>
                     <th scope="col">Distance</th>
+                    <th scope="col">Company</th>
                 </tr>
             </thead>
             <tbody>
@@ -112,8 +96,8 @@
                     <td>2 h</td>
                     <td>8 BGN</td>
                     <td>120 km</td>
-                    <td><button id="0" onclick="removeLine(this.id)">Remove line <i class="fa fa-trash"
-                                aria-hidden="true"></i></button>
+                    <td>Union Ivkoni</td>
+                    <td><a href="./buy-ticket.html"><i class="fas fa-ticket-alt"></i>
                     </td>
                 </tr>
                 <tr>
@@ -123,8 +107,8 @@
                     <td>3:30 h</td>
                     <td>18 BGN</td>
                     <td>240 km</td>
-                    <td><button id="1" onclick="removeLine(this.id)">Remove line <i class=" fa fa-trash"
-                                aria-hidden="true"></i></button>
+                    <td>Aleksiev</td>
+                    <td><a href="./buy-ticket.html"><i class="fas fa-ticket-alt"></i>
                     </td>
                 </tr>
             </tbody>
@@ -139,8 +123,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./scripts/lines.js"></script>
-
 </body>
 
 </html>
