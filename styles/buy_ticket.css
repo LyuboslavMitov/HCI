@@ -1,0 +1,62 @@
+body {
+    margin: 2em;
+}
+
+/* .wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border: 1px solid grey;
+}
+
+.column {
+    padding: 1em;
+}
+
+* {
+    box-sizing: border-box;
+} */
+
+.img-thumbnail {
+    border: none;
+}
+
+#buy-ticket-container {
+    border: 1px solid grey;
+}
+
+.col-md {
+    padding: 1em;
+}
+
+#date-container {
+    margin: 2em 0;
+}
+
+#date-container > * {
+    /* float: left; */
+    display: inline-block;
+    vertical-align: top;
+}
+
+#date-container p {
+    font-size: 1.2em;
+}
+
+#date-container img {
+    height: 5em;
+}
+
+.left {
+    margin-left: 2em;
+}
+
+#button-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#button-container button {
+    display: inline-block;
+    margin: 1em;
+}
