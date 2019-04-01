@@ -1,34 +1,44 @@
-var allLines = [];
+const allLines = [{
+    id: '0'
+}, {
+    id: '1'
+}];
 
 function addLine() {
-    let startPoint = document.getElementById('startPoint').value;
-    let endPoint = document.getElementById('endPoint').value;
-    let stops = document.getElementById('stops').value;
-    let duration = document.getElementById('duration').value;
-    let price = document.getElementById('price').value;
-    let distance = document.getElementById('distance').value;
+    const startPoint = document.getElementById('startPoint').value;
+    const endPoint = document.getElementById('endPoint').value;
+    const stops = document.getElementById('stops').value;
+    const duration = document.getElementById('duration').value;
+    const price = document.getElementById('price').value;
+    const distance = document.getElementById('distance').value;
 
-    let dataForLine = [startPoint, endPoint, stops, duration, price, distance];
-    allLines.push(dataForLine);
+    const dataForLine = [startPoint, endPoint, stops, duration, price, distance];
+    const id = new Date().getTime();
 
-    var tableRef = document.getElementById('lines').getElementsByTagName('tbody')[0];
+    allLines.push({
+        dataForLine,
+        id
+    });
 
-    var newRow = tableRef.insertRow();
+    const tableRef = document.getElementById('lines').getElementsByTagName('tbody')[0];
 
-    for (let i = 0; i < dataForLine.length; i++) {
-        var newCell = newRow.insertCell(i);
-        var newText = document.createTextNode(dataForLine[i]);
+    const newRow = tableRef.insertRow();
+
+    dataForLine.forEach((currData, i) => {
+        const newCell = newRow.insertCell(i);
+        const newText = document.createTextNode(currData);
         newCell.appendChild(newText);
-    }
+    })
 
-    var removeButton = newRow.insertCell();
-    removeButton.innerHTML = `<button id="${allLines.length - 1}" onclick="removeLine(this.id)">Remove line <i class="fa fa-trash" aria-hidden="true"></i></button>`;
+    const removeButton = newRow.insertCell();
+    removeButton.innerHTML = `<button id="${id}" onclick="removeLine(this.id)">Remove line <i class="fa fa-trash" aria-hidden="true"></i></button>`;
 
 
     event.preventDefault();
 }
-function removeLine(position) {
-    console.log(position)
-    allLines.splice(position, 1);
-    document.getElementById('lines').deleteRow(position)
+
+function removeLine(id) {
+    const idx = allLines.findIndex(line => `${line.id}` === `${id}`)
+    allLines.splice(idx, 1);
+    document.getElementById('lines').deleteRow(idx + 1)
 }
