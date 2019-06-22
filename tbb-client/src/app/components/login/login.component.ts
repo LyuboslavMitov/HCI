@@ -10,9 +10,7 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
   
   loginForm: FormGroup;
-  titleAlert: string = 'This field is required';
-  post: any = '';
-
+  
   constructor(private formBuilder: FormBuilder) { }
   
   ngOnInit() {
@@ -24,14 +22,5 @@ export class LoginComponent implements OnInit {
       username: new FormControl(),
       password: new FormControl()
     });
-  }
-  // get usernamename() {
-  //   return this.formGroup.get('usernamename') as FormControl
-  // }
-  // get password() {
-  //   return this.formGroup.get('password') as FormControl
-  // }
-  onSubmit(post) {
-    this.post = post;
   }
 }
