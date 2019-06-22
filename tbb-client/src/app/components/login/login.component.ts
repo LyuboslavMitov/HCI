@@ -19,8 +19,11 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.loginForm = new FormGroup({
-      username: new FormControl(),
-      password: new FormControl()
+      username: new FormControl(''),
+      password: new FormControl('')
     });
+  }
+  onSubmit(formValue:any) {
+    console.log(formValue);
   }
 }
