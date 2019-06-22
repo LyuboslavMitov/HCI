@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -12,30 +11,17 @@
     <title>Home</title>
 </head>
 <body>
-    <app-menu></app-menu>
-    <h3 class="display-4 font-italic text-center">Welcome to Travel by Bus</h3>
-    <div class="jumbotron row">
-        <i class="icon fa fa-search col text-center"></i>
-        <i class="icon fas fa-list col text-center"></i>
-        <i class="icon far fa-credit-card col text-center"></i>
-        <ul class="list-group list-group-flush" style="width: 100%;margin-top:50px;">
-            <li class="list-group-item">Search quickly using our cross-platform apps,
-                in your
-                local language and
-                currency.</li>
-            <li class="list-group-item">Compare your options using our system.</li>
-            <li class="list-group-item">Book easily and get where you’re going!</li>
-        </ul>
-    </div>
-    <footer>
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> Travel by bus</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  <app-menu></app-menu>
+  <router-outlet></router-outlet>
+  
+  <!-- <footer>
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="https://mdbootstrap.com/education/bootstrap/"> Travel by bus</a>
+      </div>
+      
+  </footer> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
 </body>
-</html>
-<router-outlet></router-outlet>
