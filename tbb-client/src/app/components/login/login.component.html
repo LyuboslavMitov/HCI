@@ -1,0 +1,39 @@
+<!-- <form method="post" action="index.html">
+    <div class="box">
+        <h1>Please sign in</h1>
+
+        <input type="email" placeholder="Email address" class="email" />
+        <br>
+
+        <input type="password" placeholder="Password" class="email" />
+        
+        <br>
+        
+        <input class="checkbox" type="checkbox" value="Bike">Remember me<br>
+
+        <a href="#">
+            <div class="btn">Sign In</div>
+        </a>
+
+    </div>
+</form> -->
+
+<!-- <form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input  placeholder="Username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input  type="password" placeholder="Password">
+      </mat-form-field>
+  </form> -->
+
+  <form [formGroup]="loginForm" class="example-form">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Username">
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+          <input matInput type="password" placeholder="Password">
+        </mat-form-field>
+    </form>
+    
