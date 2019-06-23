@@ -6,6 +6,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyTicketsComponent } from './components/my-tickets/my-tickets.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SearchRouteComponent } from './components/search-route/search-route.component';
 
 const routes: Routes = [
   { path: 'home', component: AppComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'tickets', component: MyTicketsComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'search', component: SearchRouteComponent},
   { path: '', component: HomePageComponent}
 ];
 @NgModule({

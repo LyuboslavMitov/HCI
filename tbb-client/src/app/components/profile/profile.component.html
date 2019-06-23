@@ -6,20 +6,16 @@
     <div class="reg">
         <form id="reg-form" [formGroup]="profileForm" class="text-center">
             <mat-form-field >
-                <label>Change name</label>
-                <input type="text" name="name" matInput formControlName="username">
+                <input type="text" name="name" matInput placeholder="Change name" formControlName="username">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
-                <label>Change password</label>
-                <input type="password" name="password" matInput formControlName="password">
+                <input type="password" name="password" placeholder="Change password" matInput formControlName="password">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
-                <label>Confirm password</label>
-                <input type="password" name="confirmPassword" matInput formControlName="confirmPassword">
+                <input type="password" name="confirmPassword" placeholder="Confirm password" matInput formControlName="confirmPassword">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
-                <label>Email</label>
-                <input type="email" name="email" matInput formControlName="email">
+                <input type="email" name="email" placeholder="Email" matInput formControlName="email">
             </mat-form-field>
             <div class="mr-auto pad-tb-10">
                 <label>Linked accounts</label>
