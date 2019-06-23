@@ -1,3 +1,31 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+    <div class="user-picture">
+        <img class="user" src="../../../assets/images/user.svg">
+            <h1 style="margin-left: 70%">Stoil</h1>
+    </div>
+    <div class="reg">
+        <form id="reg-form" [formGroup]="profileForm" class="text-center">
+            <div class="mr-auto pad-tb-10">
+                <label>Change name</label>
+                <input id="email" class="generic-input" type="text" name="name">
+            </div>
+            <div class="mr-auto pad-tb-10">
+                <label>Change password</label>
+                <input id="firstName" class="generic-input" type="text" name="password">
+            </div>
+            <div class="mr-auto pad-tb-10">
+                <label>Email</label>
+                <input id="lastName" class="generic-input" type="email" name="email">
+            </div>
+            <div class="mr-auto pad-tb-10">
+                <label>Linked accounts</label>
+                <img src="../../../assets/images/icons8-twitter.svg">
+                    <img src="../../../assets/images/icons8-facebook.svg">
+                        <img src="../../../assets/images/icons8-linkedin.svg">
+            </div>
+            <div class="mr-auto pad-tb-10">
+                <input type="button" id="submit-btn" class="generic-input submit-btn" value="Save">
+            </div>
+        </form>
+    </div>
+</div>

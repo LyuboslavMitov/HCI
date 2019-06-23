@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  profileForm: FormGroup;
   constructor() { }
 
   ngOnInit() {
+    this.profileForm = new FormGroup({
+      username: new FormControl(''),
+      password: new FormControl('')
+    });
   }
 
 }
