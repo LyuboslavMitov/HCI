@@ -15,6 +15,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchRouteComponent } from './components/search-route/search-route.component';
+import { ExistingLinesComponent } from './components/company-lines/existing-lines/existing-lines.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,10 @@ import { SearchRouteComponent } from './components/search-route/search-route.com
     MyTicketsComponent,
     ProfileComponent,
     SearchRouteComponent,
+    ExistingLinesComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,

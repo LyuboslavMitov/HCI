@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { 
+import {
   MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -32,10 +32,11 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatStepperModule,
+  MatFormFieldModule,
 } from '@angular/material';
 
 @NgModule({
-  imports: [ 
+  imports: [
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -100,7 +101,8 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule,
-  ]    
+    MatFormFieldModule
+  ]
 })
 
-export class MaterialModule {}
+export class MaterialModule { }
