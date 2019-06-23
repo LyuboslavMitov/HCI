@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { BusLine } from '../models/BusLine';
-import { BUS_LINES } from '../../../mockData/BusLines';
 
 @Injectable({
   providedIn: 'root'
