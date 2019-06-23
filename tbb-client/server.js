@@ -27,22 +27,31 @@ app.use(bodyparser.urlencoded({
 app.use(bodyparser.json());
 
 app.post('/auth/login', (req, res) => {
-    const { username, password } = req.body
+  const {
+    username,
+    password
+  } = req.body
 
-    getData('./mockData/users.json').then(users => {
-        const foundUser = users.find(user => user.username === username)
-        
-        if (!foundUser || foundUser.password !== password) {
-            res.status(401)
-                .json({message: 'Wrong credentials.'})
+  getData('./mockData/users.json').then(users => {
+    const foundUser = users.find(user => user.username === username)
 
-            return;
-        }
-
-        res.status(200).json({
-            token: jwt.sign({ user: foundUser.username, id: foundUser.id }, SECRET)
+    if (!foundUser || foundUser.password !== password) {
+      res.status(401)
+        .json({
+          message: 'Wrong credentials.'
         })
+
+      return;
+    }
+
+    res.status(200).json({
+      token: jwt.sign({
+        user: foundUser.username,
+        id: foundUser.id,
+        role: foundUser.role
+      }, SECRET)
     })
+  })
 })
 
 app.get('/api/test', (req, res) => {
