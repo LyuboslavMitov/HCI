@@ -16,6 +16,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchRouteComponent } from './components/search-route/search-route.component';
 import { ExistingLinesComponent } from './components/company-lines/existing-lines/existing-lines.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -30,14 +31,14 @@ import { ExistingLinesComponent } from './components/company-lines/existing-line
     ExistingLinesComponent,
   ],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     HttpClientModule,
     ReactiveFormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
