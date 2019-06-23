@@ -1,17 +1,19 @@
 import { COMPANY, TRAVELER } from './../../common/constants';
 import { AuthService } from './../../core/auth.service';
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ILink, guestLinks, companyLinks, travelerLinks } from 'src/app/common/menu-links';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit, OnChanges {
+export class MenuComponent implements OnInit, OnDestroy {
   links: ILink[] = guestLinks;
-  userRole = null;
+  userRoleSubscription: Subscription;
+  userRole = '';
 
   constructor(
     private router: Router,
@@ -19,13 +21,14 @@ export class MenuComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    this.userRole = this.authService.getUserRole();
-    this.setLinks();
+    this.userRoleSubscription = this.authService.userRole$.subscribe(role => {
+      this.userRole = role;
+      this.setLinks();
+    });
   }
 
-  ngOnChanges() {
-    this.userRole = this.authService.getUserRole();
-    this.setLinks();
+  ngOnDestroy() {
+    this.userRoleSubscription.unsubscribe();
   }
 
   logout() {

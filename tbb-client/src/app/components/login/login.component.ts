@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
     }).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
+        this.authService.updateUserRole();
         this.router.navigate(['/']);
 
         return true;
