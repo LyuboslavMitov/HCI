@@ -10,6 +10,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyTicketsComponent } from './components/my-tickets/my-tickets.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MenuComponent,
     HomePageComponent,
     LoginComponent,
+    MyTicketsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
