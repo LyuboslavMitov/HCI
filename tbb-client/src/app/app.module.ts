@@ -14,6 +14,7 @@ import { MyTicketsComponent } from './components/my-tickets/my-tickets.component
 import { ProfileComponent } from './components/profile/profile.component';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchRouteComponent } from './components/search-route/search-route.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     MyTicketsComponent,
     ProfileComponent,
+    SearchRouteComponent,
   ],
   imports: [
     BrowserModule,

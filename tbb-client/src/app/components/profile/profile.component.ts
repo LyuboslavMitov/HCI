@@ -14,7 +14,9 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.profileForm = new FormGroup({
       username: new FormControl(''),
-      password: new FormControl('')
+      password: new FormControl(''),
+      confirmPassword: new FormControl(''),
+      email: new FormControl('')
     });
   }
 

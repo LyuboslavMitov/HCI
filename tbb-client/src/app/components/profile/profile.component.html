@@ -5,18 +5,18 @@
     </div>
     <div class="reg">
         <form id="reg-form" [formGroup]="profileForm" class="text-center">
-            <div class="mr-auto pad-tb-10">
-                <label>Change name</label>
-                <input id="email" class="generic-input" type="text" name="name">
-            </div>
-            <div class="mr-auto pad-tb-10">
-                <label>Change password</label>
-                <input id="firstName" class="generic-input" type="text" name="password">
-            </div>
-            <div class="mr-auto pad-tb-10">
-                <label>Email</label>
-                <input id="lastName" class="generic-input" type="email" name="email">
-            </div>
+            <mat-form-field >
+                <input type="text" name="name" matInput placeholder="Change name" formControlName="username">
+            </mat-form-field>
+            <mat-form-field class="mr-auto pad-tb-10">
+                <input type="password" name="password" placeholder="Change password" matInput formControlName="password">
+            </mat-form-field>
+            <mat-form-field class="mr-auto pad-tb-10">
+                <input type="password" name="confirmPassword" placeholder="Confirm password" matInput formControlName="confirmPassword">
+            </mat-form-field>
+            <mat-form-field class="mr-auto pad-tb-10">
+                <input type="email" name="email" placeholder="Email" matInput formControlName="email">
+            </mat-form-field>
             <div class="mr-auto pad-tb-10">
                 <label>Linked accounts</label>
                 <img src="../../../assets/images/icons8-twitter.svg">
