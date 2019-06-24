@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchRouteComponent } from './components/search-route/search-route.component';
 import { ExistingLinesComponent } from './components/company-lines/existing-lines/existing-lines.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { TicketComponent } from './components/my-tickets/ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     ProfileComponent,
     SearchRouteComponent,
     ExistingLinesComponent,
+    TicketComponent,
   ],
   imports: [
     BrowserModule,
