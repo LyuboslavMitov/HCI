@@ -1,0 +1,9 @@
+<mat-card *ngIf="ticket">
+  <h4>MILEN RABADZHIEV</h4>
+  <div>{{ticket.date}}</div>
+  <div>{{ticket.startPoint}}-{{ticket.endPoint}}</div>
+  <div>Duration: {{ticket.duration}}</div>
+  <div>Price: {{ticket.price}}</div>
+  <div style="margin-bottom:15px">Distance: {{ticket.distance}}</div>
+  <i class="fas fa-bus-alt fa-6x"></i>
+</mat-card>

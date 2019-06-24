@@ -1,18 +1,20 @@
 <div class="container">
     <div class="user-picture">
         <img class="user" src="../../../assets/images/user.svg">
-            <h1 style="margin-left: 70%">Stoil</h1>
+        <h1 style="margin-left: 70%">Stoil</h1>
     </div>
-    <div class="reg">
+    <div class="reg" style="margin-bottom:5%">
         <form id="reg-form" [formGroup]="profileForm" class="text-center">
-            <mat-form-field >
+            <mat-form-field>
                 <input type="text" name="name" matInput placeholder="Change name" formControlName="username">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
-                <input type="password" name="password" placeholder="Change password" matInput formControlName="password">
+                <input type="password" name="password" placeholder="Change password" matInput
+                    formControlName="password">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
-                <input type="password" name="confirmPassword" placeholder="Confirm password" matInput formControlName="confirmPassword">
+                <input type="password" name="confirmPassword" placeholder="Confirm password" matInput
+                    formControlName="confirmPassword">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
                 <input type="email" name="email" placeholder="Email" matInput formControlName="email">
@@ -20,8 +22,8 @@
             <div class="mr-auto pad-tb-10">
                 <label>Linked accounts</label>
                 <img src="../../../assets/images/icons8-twitter.svg">
-                    <img src="../../../assets/images/icons8-facebook.svg">
-                        <img src="../../../assets/images/icons8-linkedin.svg">
+                <img src="../../../assets/images/icons8-facebook.svg">
+                <img src="../../../assets/images/icons8-linkedin.svg">
             </div>
             <div class="mr-auto pad-tb-10">
                 <input type="button" id="submit-btn" class="generic-input submit-btn" value="Save">
