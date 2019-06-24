@@ -92,21 +92,21 @@ app.put('/users/:id', (req, res) => {
   })
 })
 
-app.get('/api/test', (req, res) => {
-  getData('./mockData/test.json').then(data => {
+app.get('/tickets', (req, res) => {
+  getData('./mockData/tickets.json').then(data => {
     res.json(data)
   })
 })
 
 
-app.post('/api/test', (req, res) => {
-  getData('./mockData/test.json').then((data) => {
+app.post('/tickets', (req, res) => {
+  getData('./mockData/tickets.json').then((data) => {
     const {
       body
     } = req
     data.push(body)
 
-    fs.writeFile('./mockData/test.json', JSON.stringify(data), 'utf8', (err) => {
+    fs.writeFile('./mockData/tickets.json', JSON.stringify(data), 'utf8', (err) => {
       if (!err) {
         res.json(data)
       }

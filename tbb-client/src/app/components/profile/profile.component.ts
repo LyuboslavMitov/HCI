@@ -45,6 +45,6 @@ export class ProfileComponent implements OnInit {
       editedUser.password = formValue.newPassword;
     }
 
-    this.authService.updateUser(editedUser).subscribe(console.log)
+    this.authService.updateUser(editedUser).subscribe(console.log);
   }
 }

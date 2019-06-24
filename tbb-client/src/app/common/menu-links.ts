@@ -10,11 +10,11 @@ export const guestLinks: ILink[] = [
         class: 'nav-item nav-link',
         routerLink: ''
     },
-    {
-        name: 'Login',
-        class: 'nav-item nav-link',
-        routerLink: '/login'
-    }
+    // {
+    //     name: 'Login',
+    //     class: 'nav-item nav-link',
+    //     routerLink: '/login'
+    // }
 ];
 
 

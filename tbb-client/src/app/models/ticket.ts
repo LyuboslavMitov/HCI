@@ -8,4 +8,5 @@ export interface Ticket {
     distance: string;
     company: string;
     date: string;
+    userId?: string;
 }
