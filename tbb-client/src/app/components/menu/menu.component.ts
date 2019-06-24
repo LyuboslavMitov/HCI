@@ -4,6 +4,7 @@ import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ILink, guestLinks, companyLinks, travelerLinks } from 'src/app/common/menu-links';
 import { Subscription } from 'rxjs';
+import { NotificationService } from 'src/app/core/notification.service';
 
 @Component({
   selector: 'app-menu',
@@ -18,6 +19,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private authService: AuthService,
+    private notificator: NotificationService,
   ) { }
 
   ngOnInit() {
@@ -33,6 +35,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authService.logout();
+    this.notificator.success('Successful logout!');
     this.router.navigate(['/']);
   }
 

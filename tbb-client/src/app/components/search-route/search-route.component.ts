@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BusLine } from 'src/app/models/BusLine';
 import { CompanyService } from 'src/app/services/company.service';
 import { HttpClient } from '@angular/common/http';
+import { NotificationService } from 'src/app/core/notification.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-route',
@@ -32,6 +34,8 @@ export class SearchRouteComponent implements OnInit {
   constructor(
     private service: CompanyService,
     private http: HttpClient,
+    private notificator: NotificationService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -44,7 +48,10 @@ export class SearchRouteComponent implements OnInit {
       duration: `${event.duration}h`
     };
 
-    this.http.post<any>(`http://localhost:3000/tickets`, ticket).subscribe();
+    this.http.post<any>(`http://localhost:3000/tickets`, ticket).subscribe(() => {
+      this.notificator.success('A ticket was successfully bought!');
+      this.router.navigate(['/tickets']);
+    });
   }
   changeStartingPoint(event: any) {
     this.startPoint = event.value;
@@ -58,7 +65,6 @@ export class SearchRouteComponent implements OnInit {
   private getLines() {
     this.service.getLines().subscribe(res => {
       this.companyLines = res;
-      console.log(this.companyLines)
     });
   }
   filter() {

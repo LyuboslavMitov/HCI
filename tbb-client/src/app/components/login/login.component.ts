@@ -4,6 +4,7 @@ import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms'
 import { Observable } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/core/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private formBuilder: FormBuilder,
+    private notificator: NotificationService,
   ) { }
 
   ngOnInit() {
@@ -40,13 +42,14 @@ export class LoginComponent implements OnInit {
     }).subscribe(
       (res) => {
         localStorage.setItem('token', res.token);
+        this.notificator.success('Successful login!');
         this.authService.updateUserRole();
         this.router.navigate(['/']);
 
         return true;
       },
       (err: HttpErrorResponse) => {
-        console.error('error');
+        this.notificator.error('Wrong credentials!');
       });
   }
 }

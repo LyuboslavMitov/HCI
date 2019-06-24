@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
 import { User } from 'src/app/models/user';
+import { NotificationService } from 'src/app/core/notification.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +18,10 @@ export class ProfileComponent implements OnInit {
   });
   private currentUser: User;
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private notificator: NotificationService,
+    ) { }
 
   ngOnInit() {
     this.authService.getCurrentUser().subscribe(user => {
@@ -45,6 +49,8 @@ export class ProfileComponent implements OnInit {
       editedUser.password = formValue.newPassword;
     }
 
-    this.authService.updateUser(editedUser).subscribe(console.log);
+    this.authService.updateUser(editedUser).subscribe(() => {
+      this.notificator.success('New profile info successfully saved!');
+    });
   }
 }

@@ -18,6 +18,7 @@ import { SearchRouteComponent } from './components/search-route/search-route.com
 import { ExistingLinesComponent } from './components/company-lines/existing-lines/existing-lines.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { TicketComponent } from './components/my-tickets/ticket/ticket.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TicketComponent } from './components/my-tickets/ticket/ticket.component
     ReactiveFormsModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
