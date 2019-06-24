@@ -58,7 +58,6 @@ export class SearchRouteComponent implements OnInit {
   private getLines() {
     this.service.getLines().subscribe(res => {
       this.companyLines = res;
-      console.log(this.companyLines)
     });
   }
   filter() {
