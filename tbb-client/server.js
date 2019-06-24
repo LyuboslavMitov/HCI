@@ -54,11 +54,50 @@ app.post('/auth/login', (req, res) => {
   })
 })
 
+app.get('/users/:id', (req, res) => {
+  const {
+    id
+  } = req.params
+
+  getData('./mockData/users.json').then(users => {
+    const foundUser = users.find(u => u.id === id)
+    res.json(foundUser)
+  })
+})
+
+app.put('/users/:id', (req, res) => {
+  const {
+    id
+  } = req.params
+
+  getData('./mockData/users.json').then(data => {
+    const {
+      body: {
+        email,
+        username,
+        password
+      }
+    } = req
+
+    const userFound = data.find(user => user.id === id)
+    userFound.email = email
+    userFound.username = username
+    userFound.password = password
+
+    fs.writeFile('./mockData/users.json', JSON.stringify(data), 'utf8', (err) => {
+      if (!err) {
+        res.json(data)
+      }
+    });
+  })
+})
+
 app.get('/api/test', (req, res) => {
   getData('./mockData/test.json').then(data => {
     res.json(data)
   })
 })
+
 
 app.post('/api/test', (req, res) => {
   getData('./mockData/test.json').then((data) => {

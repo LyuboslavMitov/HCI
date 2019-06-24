@@ -1,14 +1,1 @@
-[
-    {
-        "id": "1",
-        "username": "pesho",
-        "password": "123456",
-        "role": "traveler"
-    },
-    {
-        "id": "2",
-        "username": "company",
-        "password": "123456",
-        "role": "company"
-    }
-]
+[{"id":"1","username":"pesho","password":"123456","role":"traveler","email":"newmail1@abv.bg"},{"id":"2","username":"company","password":"123456","role":"company"}]

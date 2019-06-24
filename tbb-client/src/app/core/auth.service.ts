@@ -8,22 +8,6 @@ import { User } from '../models/user';
 export class AuthService {
     private userRoleSubject = new BehaviorSubject<string>(this.getUserRole());
 
-    public users: User[] =[
-        {
-            id: 1,
-            username: "pesho",
-            password: "123456",
-            role: "traveler"
-        },
-        {
-            id: 2,
-            username: "company",
-            password: "123456",
-            role: "company"
-        }
-    ]
-
-
     constructor(
         private http: HttpClient,
     ) { }
@@ -57,8 +41,12 @@ export class AuthService {
         return this.getDecodedToken().id;
     }
 
-    public updateUser(editedUser:User){
-        //make api call here
+    public getCurrentUser() {
+        return this.http.get<any>(`http://localhost:3000/users/${this.getUserId()}`);
+    }
+
+    public updateUser(editedUser: User) {
+        return this.http.put<any>(`http://localhost:3000/users/${this.getUserId()}`, editedUser);
     }
 
     private getDecodedToken() {
@@ -70,5 +58,5 @@ export class AuthService {
         console.log(jwt_decode(token));
         return (jwt_decode(token) as any);
     }
-    
+
 }
