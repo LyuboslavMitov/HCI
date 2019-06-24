@@ -1,3 +1,39 @@
-<p>
-  search-route works!
-</p>
+<div class="container">
+  <div class="row justify-content-md-left" style="margin-top:2%">
+    <mat-form-field class="col-lg-4">
+      <mat-label>Start point</mat-label>
+      <mat-select [value]="defaultOption" (selectionChange)="changeStartingPoint($event)">
+        <mat-option *ngFor="let city of cities" [value]="city">
+          {{city}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-lg-4">
+      <mat-label>End point</mat-label>
+      <mat-select [value]="defaultOption" (selectionChange)="changeEndPoint($event)">
+        <mat-option *ngFor="let city of cities" [value]="city">
+          {{city}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-lg-4">
+      <mat-label>Sort By</mat-label>
+      <mat-select (selectionChange)="changeSortOption($event)">
+        <mat-option *ngFor="let option of sortOptions" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <button class="btn btn-primary" (click)="filter()">FILTER</button>
+  <div class="row" style="margin-bottom: 2%">
+    <div class="col align-self-center">
+      <app-existing-lines [companyLines]="companyLines" [actionText]="buttonText"
+        (tableActionClicked)="buyTicket($event)">
+      </app-existing-lines>
+    </div>
+  </div>
+</div>
