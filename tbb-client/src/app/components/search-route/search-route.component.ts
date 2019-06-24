@@ -41,7 +41,7 @@ export class SearchRouteComponent implements OnInit {
     const ticket = {
       ...event,
       date: '24-05-2019, 9:00:00',
-      duration: `${event.duration}h`
+      duration: `${event.duration}`
     };
 
     this.http.post<any>(`http://localhost:3000/tickets`, ticket).subscribe();

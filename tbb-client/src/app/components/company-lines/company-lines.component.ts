@@ -14,7 +14,7 @@ export class CompanyLinesComponent implements OnInit {
   companyLines: BusLine[];
 
   newLine: BusLine;
-  buttonText:string = "Remove line";
+  buttonText: string = "Remove line";
 
   newLineForm = new FormGroup({
     startPoint: new FormControl(''),
@@ -33,9 +33,7 @@ export class CompanyLinesComponent implements OnInit {
   onFormSubmit(value: BusLine): void {
     this.service.addLine(value);
     this.getLines();
-    // this.companyLines.push(value);
     this.companyLines = this.companyLines.slice();
-    console.log(this.companyLines)
   }
 
   private getLines() {
@@ -43,7 +41,7 @@ export class CompanyLinesComponent implements OnInit {
       this.companyLines = res;
     });
   }
-  deleteLine(event:any) {
+  deleteLine(event: any) {
     this.service.removeLine(event as BusLine);
     this.getLines();
     this.companyLines = this.companyLines.slice();

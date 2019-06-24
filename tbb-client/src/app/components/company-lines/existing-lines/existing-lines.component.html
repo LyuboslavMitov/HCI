@@ -23,22 +23,23 @@
 
     <ng-container matColumnDef="duration">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
-      <td mat-cell *matCellDef="let element"> {{element.duration}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.duration}} h</td>
     </ng-container>
 
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.price}} BGN</td>
     </ng-container>
 
     <ng-container matColumnDef="distance">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Distance </th>
-      <td mat-cell *matCellDef="let element"> {{element.distance}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.distance}} km</td>
     </ng-container>
 
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>   </th>
-      <td mat-cell *matCellDef="let element"> <button class="btn btn-dark" (click)="emitEvent(element)">{{actionText}}</button> </td>
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element"> <button class="btn btn-dark"
+          (click)="emitEvent(element)">{{actionText}}</button> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
