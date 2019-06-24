@@ -55,7 +55,6 @@ export class AuthService {
         if (!token) {
             return null;
         }
-        console.log(jwt_decode(token));
         return (jwt_decode(token) as any);
     }
 

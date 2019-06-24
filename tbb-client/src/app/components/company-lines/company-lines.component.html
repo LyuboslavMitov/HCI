@@ -1,43 +1,43 @@
 <div class="container">
-    <div class="row justify-content-md-center" style="margin-top:2%">
-        <h3>Create new line</h3>
 
-        <form [formGroup]="newLineForm" class="example-form" (ngSubmit)="onFormSubmit(newLineForm.value)">
-            <div class="row">
-                <mat-form-field class="col">
-                    <input matInput placeholder="Enter start pont" formControlName="startPoint">
-                </mat-form-field>
+    <h3>Create new line</h3>
+    <form [formGroup]="newLineForm" class="example-form" (ngSubmit)="onFormSubmit(newLineForm.value)">
+        <div class="row justify-content-md-left">
+            <mat-form-field class="col-lg-4">
+                <input matInput placeholder="Enter start pont" formControlName="startPoint">
+            </mat-form-field>
 
-                <mat-form-field class="col">
-                    <input matInput formControlName="endPoint" placeholder="Enter end point">
-                </mat-form-field>
+            <mat-form-field class="col-lg-4">
+                <input matInput formControlName="endPoint" placeholder="Enter end point">
+            </mat-form-field>
 
-                <mat-form-field class="col">
-                    <input matInput formControlName="stops" placeholder="Enter stops">
-                </mat-form-field>
-                <div class="w-100"></div>
-                <mat-form-field class="col">
-                    <input matInput formControlName="duration" placeholder="Enter duration">
-                    <span matSuffix>h</span>
-                </mat-form-field>
+            <mat-form-field class="col-lg-4">
+                <input matInput formControlName="stops" placeholder="Enter stops">
+            </mat-form-field>
+            <div class="w-100"></div>
+            <mat-form-field class="col-lg-4">
+                <input matInput formControlName="duration" placeholder="Enter duration">
+                <span matSuffix>h</span>
+            </mat-form-field>
 
-                <mat-form-field class="col">
-                    <input matInput formControlName="price" placeholder="Enter price">
-                    <span matSuffix>BGN</span>
-                </mat-form-field>
+            <mat-form-field class="col-lg-4">
+                <input matInput formControlName="price" placeholder="Enter price">
+                <span matSuffix>BGN</span>
+            </mat-form-field>
 
-                <mat-form-field class="col">
-                    <input matInput formControlName="distance" placeholder="Enter distance">
-                    <span matSuffix>km</span>
-                </mat-form-field>
-                <div class="w-100"></div>
-                <input type="submit">
-            </div>
-        </form>
-    </div>
+            <mat-form-field class="col-lg-4">
+                <input matInput formControlName="distance" placeholder="Enter distance">
+                <span matSuffix>km</span>
+            </mat-form-field>
+            <div class="w-100"></div>
+        </div>
+        <button class="btn btn-primary">CREATE</button>
+    </form>
+
     <div class="row" style="margin-bottom: 2%">
         <div class="col align-self-center">
-            <app-existing-lines [companyLines]="companyLines" [actionText]="buttonText" (tableActionClicked)="deleteLine($event)">
+            <app-existing-lines [companyLines]="companyLines" [actionText]="buttonText"
+                (tableActionClicked)="deleteLine($event)">
             </app-existing-lines>
         </div>
     </div>

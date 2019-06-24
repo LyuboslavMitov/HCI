@@ -1,7 +1,7 @@
 <div class="container">
     <div class="user-picture">
         <img class="user" src="../../../assets/images/user.svg">
-        <h1 style="margin-left: 70%">Stoil</h1>
+        <div *ngIf="currentUser"><h1 style="margin-left: 70%">{{currentUser.username}}</h1></div>
     </div>
 
     <div class="reg">

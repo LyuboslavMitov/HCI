@@ -25,12 +25,10 @@ export class ExistingLinesComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    console.log(this.actionText)
   }
 
   ngOnChanges() {
     this.dataSource.data = this.companyLines;
-    console.log('on changes');
   }
 
   applyFilter(filterValue: string) {
