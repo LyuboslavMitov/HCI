@@ -1,0 +1,9 @@
+.end {
+  margin-left: auto;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

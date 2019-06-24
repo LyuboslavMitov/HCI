@@ -2,6 +2,13 @@
     {
         "id": "1",
         "username": "pesho",
-        "password": "123456"
+        "password": "123456",
+        "role": "traveler"
+    },
+    {
+        "id": "2",
+        "username": "company",
+        "password": "123456",
+        "role": "company"
     }
 ]
