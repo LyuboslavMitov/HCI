@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnChanges, ChangeDetectorRef } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -11,6 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./existing-lines.component.css']
 })
 export class ExistingLinesComponent implements OnInit, OnChanges {
+
   @Input() companyLines: BusLine[];
 
   displayedColumns: string[] = ['startPoint', 'endPoint', 'stops', 'duration', 'price', 'distance'];
@@ -18,16 +19,16 @@ export class ExistingLinesComponent implements OnInit, OnChanges {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor() { }
+  constructor(private changeDetectorRefs: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
   }
 
   ngOnChanges() {
     this.dataSource.data = this.companyLines;
+    console.log('on changes');
   }
 
   applyFilter(filterValue: string) {

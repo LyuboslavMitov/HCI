@@ -1,48 +1,44 @@
-<div class="flex-container" fxLayout="row wrap" fxLayoutAlign="center">
-
-    <div fxLayout="row wrap" fxFlex=90>
+<div class="container">
+    <div class="row justify-content-md-center" style="margin-top:2%">
         <h3>Create new line</h3>
 
-        <form fxLayout fxLayoutGap="10" [formGroup]="newLineForm" class="example-form"
-            (ngSubmit)="onFormSubmit(newLineForm.value)">
+        <form [formGroup]="newLineForm" class="example-form" (ngSubmit)="onFormSubmit(newLineForm.value)">
+            <div class="row">
+                <mat-form-field class="col">
+                    <input matInput placeholder="Enter start pont" formControlName="startPoint">
+                </mat-form-field>
 
-            <mat-form-field>
-                <input matInput placeholder="Enter start pont" formControlName="start">
-            </mat-form-field>
+                <mat-form-field class="col">
+                    <input matInput formControlName="endPoint" placeholder="Enter end point">
+                </mat-form-field>
 
+                <mat-form-field class="col">
+                    <input matInput formControlName="stops" placeholder="Enter stops">
+                </mat-form-field>
+                <div class="w-100"></div>
+                <mat-form-field class="col">
+                    <input matInput formControlName="duration" placeholder="Enter duration">
+                    <span matSuffix>h</span>
+                </mat-form-field>
 
-            <mat-form-field>
-                <input matInput formControlName="end" placeholder="Enter end point">
-            </mat-form-field>
+                <mat-form-field class="col">
+                    <input matInput formControlName="price" placeholder="Enter price">
+                    <span matSuffix>BGN</span>
+                </mat-form-field>
 
-
-            <mat-form-field>
-                <input matInput formControlName="stops" placeholder="Enter stops">
-            </mat-form-field>
-
-
-            <mat-form-field>
-                <input matInput formControlName="duration" placeholder="Enter duration">
-                <span matSuffix>h</span>
-            </mat-form-field>
-
-
-            <mat-form-field>
-                <input matInput formControlName="price" placeholder="Enter price">
-                <span matSuffix>BGN</span>
-            </mat-form-field>
-
-
-            <mat-form-field>
-                <input matInput formControlName="distance" placeholder="Enter distance">
-                <span matSuffix>km</span>
-            </mat-form-field>
-            <input type="submit">
+                <mat-form-field class="col">
+                    <input matInput formControlName="distance" placeholder="Enter distance">
+                    <span matSuffix>km</span>
+                </mat-form-field>
+                <div class="w-100"></div>
+                <input type="submit">
+            </div>
         </form>
     </div>
-
-    <div class="flex-item" fxFlex=90>
-        <app-existing-lines [companyLines]="companyLines"></app-existing-lines>
+    <div class="row" style="margin-bottom: 2%">
+        <div class="col align-self-center">
+            <app-existing-lines [companyLines]="companyLines">
+            </app-existing-lines>
+        </div>
     </div>
-
 </div>

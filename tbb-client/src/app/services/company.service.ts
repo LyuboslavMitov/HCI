@@ -7,7 +7,6 @@ import { BusLine } from '../models/BusLine';
 })
 export class CompanyService {
   private lines: BusLine[] = [
-    { startPoint: 'Sofia', endPoint: 'Varna', stops: ['St. Zagora'], duration: 6, price: 30, distance: 400, company: 'Aleksiev' },
     { startPoint: 'Pleven', endPoint: 'Ruse', stops: [''], duration: 2, price: 10, distance: 148, company: 'Aleksiev' },
     { startPoint: 'Sofia', endPoint: 'Varna', stops: ['St. Zagora'], duration: 6, price: 30, distance: 400, company: 'Aleksiev' },
     { startPoint: 'Sofia', endPoint: 'Varna', stops: ['St. Zagora'], duration: 6, price: 30, distance: 400, company: 'Aleksiev' },

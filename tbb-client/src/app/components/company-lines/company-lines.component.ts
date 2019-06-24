@@ -16,8 +16,8 @@ export class CompanyLinesComponent implements OnInit {
   newLine: BusLine;
 
   newLineForm = new FormGroup({
-    start: new FormControl(''),
-    end: new FormControl(''),
+    startPoint: new FormControl(''),
+    endPoint: new FormControl(''),
     stops: new FormControl(''),
     duration: new FormControl(''),
     price: new FormControl(''),
@@ -29,15 +29,17 @@ export class CompanyLinesComponent implements OnInit {
     this.getLines();
   }
 
-  onFormSubmit(value: any): void {
+  onFormSubmit(value: BusLine): void {
     this.service.addLine(value);
     this.getLines();
+    // this.companyLines.push(value);
+    this.companyLines = this.companyLines.slice();
+    console.log(this.companyLines)
   }
 
   private getLines() {
     this.service.getLines().subscribe(res => {
       this.companyLines = res;
-      console.log("+++++++++++++++++++++++++++++++")
       console.log(this.companyLines)
     });
   }
