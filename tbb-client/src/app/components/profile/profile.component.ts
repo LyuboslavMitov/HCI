@@ -9,33 +9,42 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  profileForm: FormGroup;
+  profileForm: FormGroup = new FormGroup({
+    username: new FormControl('', Validators.required),
+    newPassword: new FormControl(''),
+    confirmPassword: new FormControl(''),
+    email: new FormControl('')
+  });
   private currentUser: User;
+
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.currentUser = this.authService.users[parseInt(this.authService.getUserId()) - 1];
+    this.authService.getCurrentUser().subscribe(user => {
+      this.currentUser = user;
+      const { username, email } = user;
 
-    this.profileForm = new FormGroup({
-      username: new FormControl(this.currentUser.username,Validators.required),
-      newPassword: new FormControl(''),
-      confirmPassword: new FormControl(''),
-      email: new FormControl(this.currentUser.email)
+      this.profileForm = new FormGroup({
+        username: new FormControl(username, Validators.required),
+        newPassword: new FormControl(''),
+        confirmPassword: new FormControl(''),
+        email: new FormControl(email)
+      });
     });
-
   }
+
   onSubmit(formValue: any) {
-    let editedUser: User = this.currentUser;
-    editedUser.email=formValue.email;
+    const editedUser: User = this.currentUser;
+
+    editedUser.email = formValue.email;
     editedUser.username = formValue.username;
     if (formValue.newPassword || formValue.confirmPassword) {
       if (formValue.newPassword !== formValue.confirmPassword) {
         return;
       }
       editedUser.password = formValue.newPassword;
-      
     }
-    console.log(editedUser);
+
+    this.authService.updateUser(editedUser).subscribe(console.log)
   }
 }
