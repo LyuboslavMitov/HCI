@@ -3,14 +3,15 @@
         <img class="user" src="../../../assets/images/user.svg">
         <h1 style="margin-left: 70%">Stoil</h1>
     </div>
-    <div class="reg" style="margin-bottom:5%">
-        <form id="reg-form" [formGroup]="profileForm" class="text-center">
+
+    <div class="reg">
+        <form id="reg-form" [formGroup]="profileForm" class="text-center" (ngSubmit)="onSubmit(profileForm.value)">
             <mat-form-field>
                 <input type="text" name="name" matInput placeholder="Change name" formControlName="username">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
                 <input type="password" name="password" placeholder="Change password" matInput
-                    formControlName="password">
+                    formControlName="newPassword">
             </mat-form-field>
             <mat-form-field class="mr-auto pad-tb-10">
                 <input type="password" name="confirmPassword" placeholder="Confirm password" matInput
@@ -26,7 +27,7 @@
                 <img src="../../../assets/images/icons8-linkedin.svg">
             </div>
             <div class="mr-auto pad-tb-10">
-                <input type="button" id="submit-btn" class="generic-input submit-btn" value="Save">
+                <input type="submit" id="submit-btn" class="generic-input submit-btn" value="Save">
             </div>
         </form>
     </div>

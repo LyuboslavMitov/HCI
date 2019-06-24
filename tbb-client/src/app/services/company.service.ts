@@ -22,4 +22,8 @@ export class CompanyService {
   addLine(newLine: BusLine) {
     this.lines.push(newLine);
   }
+  removeLine(line:BusLine) {
+    this.lines.splice(this.lines.indexOf(line),1);
+    console.log(this.lines);
+  }
 }

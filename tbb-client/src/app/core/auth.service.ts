@@ -2,10 +2,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import * as jwt_decode from 'jwt-decode';
+import { User } from '../models/user';
 
 @Injectable()
 export class AuthService {
     private userRoleSubject = new BehaviorSubject<string>(this.getUserRole());
+
+    public users: User[] =[
+        {
+            id: 1,
+            username: "pesho",
+            password: "123456",
+            role: "traveler"
+        },
+        {
+            id: 2,
+            username: "company",
+            password: "123456",
+            role: "company"
+        }
+    ]
+
 
     constructor(
         private http: HttpClient,
@@ -40,13 +57,18 @@ export class AuthService {
         return this.getDecodedToken().id;
     }
 
+    public updateUser(editedUser:User){
+        //make api call here
+    }
+
     private getDecodedToken() {
         const token: string = localStorage.getItem('token');
 
         if (!token) {
             return null;
         }
-
+        console.log(jwt_decode(token));
         return (jwt_decode(token) as any);
     }
+    
 }
