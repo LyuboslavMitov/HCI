@@ -44,11 +44,11 @@ export class SearchRouteComponent implements OnInit {
   buyTicket(event: any) {
     const ticket = {
       ...event,
-      date: '24-05-2019, 9:00:00',
+      date: Date.now(),
       duration: `${event.duration}`
     };
 
-    this.http.post<any>(`http://localhost:3000/tickets`, ticket).subscribe(() => {
+    this.service.addTicket(ticket).subscribe(() => {
       this.notificator.success('A ticket was successfully bought!');
       this.router.navigate(['/tickets']);
     });

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TICKETS } from './Tickets';
-import { HttpClient } from '@angular/common/http';
+import { CompanyService } from '../../services/company.service';
 import { Ticket } from 'src/app/models/ticket';
 
 @Component({
@@ -13,11 +12,11 @@ export class MyTicketsComponent implements OnInit {
   tickets = [];
 
   constructor(
-    private http: HttpClient,
+    private service: CompanyService
   ) { }
 
   ngOnInit() {
-    return this.http.get<Ticket[]>(`http://localhost:3000/tickets`).subscribe(tickets => {
+    return this.service.getTickets().subscribe(tickets => {
       this.tickets = tickets;
     });
   }
