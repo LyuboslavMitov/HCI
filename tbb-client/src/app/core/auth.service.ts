@@ -21,7 +21,7 @@ export class AuthService {
     }
 
     public login(user: any): Observable<any> {
-        return this.http.post<any>(`http://localhost:3000/auth/login`, user);
+        return this.http.get<any>(`http://localhost:8080/api/authenticate?username=${user.username}&password=${user.password}`, user);
     }
 
     public logout(): void {
