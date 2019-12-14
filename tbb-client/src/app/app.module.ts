@@ -19,6 +19,7 @@ import { ExistingLinesComponent } from './components/company-lines/existing-line
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { TicketComponent } from './components/my-tickets/ticket/ticket.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ToastrModule } from 'ngx-toastr';
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SocketIoModule.forRoot({ url: 'http://localhost:3001', options: {} })
   ],
   providers: [],
   bootstrap: [AppComponent]
