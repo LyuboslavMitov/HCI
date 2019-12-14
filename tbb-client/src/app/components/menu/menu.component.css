@@ -7,3 +7,9 @@
   flex-direction: row;
   width: 100%;
 }
+
+.weather-icon {
+  max-height: 24px;
+  width: auto;
+  padding: 0;
+}

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ILink, guestLinks, companyLinks, travelerLinks } from 'src/app/common/menu-links';
 import { Subscription } from 'rxjs';
 import { NotificationService } from 'src/app/core/notification.service';
+import { Socket } from 'ngx-socket-io';
 
 @Component({
   selector: 'app-menu',
@@ -15,11 +16,14 @@ export class MenuComponent implements OnInit, OnDestroy {
   links: ILink[] = guestLinks;
   userRoleSubscription: Subscription;
   userRole = '';
+  weatherDetails: any = { Temperature: { Value: 2.3 } };
+  weatherIcon  = `https://developer.accuweather.com/sites/default/files/38-s.png`;
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private notificator: NotificationService,
+    private socket: Socket
   ) { }
 
   ngOnInit() {
@@ -27,6 +31,12 @@ export class MenuComponent implements OnInit, OnDestroy {
       this.userRole = role;
       this.setLinks();
     });
+
+    this.socket.on('sendWeather', ({ WeatherIcon, ...weatherDetails }) => {
+      this.weatherDetails = weatherDetails;
+      const weatherIconNumber = WeatherIcon < 10 ? `0${WeatherIcon}` : `${WeatherIcon}`;
+      this.weatherIcon = `https://developer.accuweather.com/sites/default/files/${weatherIconNumber}-s.png`;
+    })
   }
 
   ngOnDestroy() {
