@@ -13,13 +13,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyTicketsComponent } from './components/my-tickets/my-tickets.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CoreModule } from './core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SearchRouteComponent } from './components/search-route/search-route.component';
 import { ExistingLinesComponent } from './components/company-lines/existing-lines/existing-lines.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { TicketComponent } from './components/my-tickets/ticket/ticket.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { TokenInterceptor } from './interceptors/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,11 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
     ToastrModule.forRoot(),
     SocketIoModule.forRoot({ url: 'http://localhost:3001', options: {} })
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
