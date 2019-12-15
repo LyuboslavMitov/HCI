@@ -16,12 +16,12 @@ export class ProfileComponent implements OnInit {
     confirmPassword: new FormControl(''),
     email: new FormControl('')
   });
-  private currentUser: User;
+  private currentUser: User = {} as any;
 
   constructor(
     private authService: AuthService,
     private notificator: NotificationService,
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.authService.getCurrentUser().subscribe(user => {
@@ -40,8 +40,8 @@ export class ProfileComponent implements OnInit {
   onSubmit(formValue: any) {
     const editedUser: User = this.currentUser;
 
-    editedUser.email = formValue.email;
     editedUser.username = formValue.username;
+    editedUser.email = formValue.email;
     if (formValue.newPassword || formValue.confirmPassword) {
       if (formValue.newPassword !== formValue.confirmPassword) {
         return;

@@ -42,11 +42,11 @@ export class AuthService {
     }
 
     public getCurrentUser() {
-        return this.http.get<any>(`http://localhost:3000/users/${this.getUserId()}`);
+        return this.http.get<any>(`http://localhost:8080/api/users/${this.getUserId()}`);
     }
 
     public updateUser(editedUser: User) {
-        return this.http.put<any>(`http://localhost:3000/users/${this.getUserId()}`, editedUser);
+        return this.http.put<any>(`http://localhost:8080/api/users/${this.getUserId()}`, editedUser);
     }
 
     private getDecodedToken() {
