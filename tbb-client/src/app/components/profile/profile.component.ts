@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
     confirmPassword: new FormControl(''),
     email: new FormControl('')
   });
-  private currentUser: User;
+  private currentUser: any;
 
   constructor(
     private authService: AuthService,
@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit(formValue: any) {
-    const editedUser: User = this.currentUser;
+    const editedUser: any = this.currentUser;
 
     editedUser.email = formValue.email;
     editedUser.username = formValue.username;
