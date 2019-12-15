@@ -1,2 +1,2 @@
-export const COMPANY = 'company';
-export const TRAVELER = 'traveler';
+export const COMPANY = 'ROLE_COMPANY';
+export const TRAVELER = 'ROLE_TRAVELER';

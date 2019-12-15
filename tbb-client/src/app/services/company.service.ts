@@ -18,45 +18,44 @@ export class CompanyService {
   private routesUrl = "http://localhost:8080/api/routes"
   private ticketsUrl = "http://localhost:8080/api/tickets"
 
-  constructor(private http: HttpClient) 
-  { }
+  constructor(private http: HttpClient) { }
 
   // Get line
-  getLine(id: number): Observable<BusLine[]> {
-    return this.http.Get<BusLine>(this.routesUrl + "/" + id)
+  getLine(id: number): Observable<BusLine> {
+    return this.http.get<BusLine>(this.routesUrl + "/" + id)
   }
 
-   // Get all lines
+  // Get all lines
   getLines(): Observable<BusLine[]> {
-    return this.http.Get<BusLine[]>(this.routesUrl)
+    return this.http.get<BusLine[]>(this.routesUrl)
   }
 
   // Post Line
   addLine(newLine: BusLine) {
-    return this.http.Post<any>(this.routesUrl, newLine)
+    return this.http.post<any>(this.routesUrl, newLine)
   }
 
   // Delete Line
   removeLine(line: BusLine) {
-    return this.http.Delete<any>(this.routesUrl + "/" + line.id)
+    return this.http.delete<any>(this.routesUrl + "/" + line.id)
   }
 
   // Get ticket
   getTicket(ticket: Ticket) {
-    return this.http.Get<Ticket>(this.ticketsUrl + "/" + ticket.id)
+    return this.http.get<Ticket>(this.ticketsUrl + "/" + ticket.id)
   }
   // Get all tickets
   getTickets() {
-    return this.http.Get<Ticket[]>(this.ticketsUrl)
+    return this.http.get<Ticket[]>(this.ticketsUrl)
   }
 
   // Post ticket
   addTicket(ticket: Ticket) {
-    return this.http.Post<any>(this.ticketsUrl + "/" + ticket)
+    return this.http.post<any>(this.ticketsUrl + "/", ticket)
   }
 
   // Delete ticket
   deleteTicket(ticket: Ticket) {
-    return this.http.Delete<any>(this.ticketsUrl + "/" + ticket.id)
+    return this.http.delete<any>(this.ticketsUrl + "/" + ticket.id)
   }
 }
