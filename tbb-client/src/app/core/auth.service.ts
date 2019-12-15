@@ -34,7 +34,7 @@ export class AuthService {
     }
 
     public getUserRole(): string {
-        return this.getDecodedToken() && this.getDecodedToken().role;
+        return this.getDecodedToken() && this.getDecodedToken().rol[0];
     }
 
     public getUserId(): string {
