@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-route.component.css']
 })
 export class SearchRouteComponent implements OnInit {
-  companyLines: BusLine[];
+  companyLines: BusLine[] = [];
 
   cities: string[] = ["Sofia",
     "St Zagora",

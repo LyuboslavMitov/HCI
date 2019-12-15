@@ -11,7 +11,7 @@ import { CompanyService } from '../../services/company.service';
   styleUrls: ['./company-lines.component.css']
 })
 export class CompanyLinesComponent implements OnInit {
-  companyLines: BusLine[];
+  companyLines: BusLine[] = [];
 
   newLine: BusLine;
   buttonText: string = "Remove line";
